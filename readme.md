@@ -26,13 +26,13 @@ rehype()
 
 ## Options
 
-<h3 style='display: inline'>`wrap.selector`</h3>
-***`string`***
+### `wrap.selector`
+#### `string`
 
 Select an element to be wrapped. Expects a string selector that can be passed to hast-util-select ([supported selectors](https://github.com/syntax-tree/hast-util-select/blob/master/readme.md#support)). If `wrap.selector` is not set then wrap will check for a `body` element and wrap all elements inside. Otherwise, if there is no `body` element, wrap treats the html as a fragment and wraps everything.
 
-<h3 style='display:inline'>`wrap.wrapper`</h3>
-***`string`***
+### `wrap.wrapper`</h3>
+#### `string`
 
 Element to wrap around *`wrap.selector`*. Expects a string *`selector`* that can be parsed into html using hast-util-parse-selector ([see readme](https://github.com/syntax-tree/hast-util-parse-selector/blob/master/readme.md))
 
