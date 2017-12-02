@@ -4,12 +4,11 @@
   "description": "wrap selected elements with a given element",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf test.js index.js coverage .nyc_output",
+    "clean": "rimraf ./*.js coverage .nyc_output",
     "pretest": "npm run babel",
-    "tap": "tap test.js",
+    "tap": "tap -Rspec test.js",
     "babel": "babel src -d .",
-    "test": "nyc --reporter=lcov npm run tap",
-    "nyc": "nyc --reporter=html tap test.js -Rspec"
+    "test": "nyc --reporter=lcov tap test.js"
   },
   "babel": {
     "presets": [
@@ -34,7 +33,7 @@
     "wrapper",
     "container"
   ],
-  "author": "mrzmmr",
+  "author": "Paul Zimmer",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mrzmmr/rehype-wrap/issues"
@@ -49,7 +48,6 @@
     "remark-parse": "^4.0.0",
     "remark-rehype": "^2.0.1",
     "tap": "^10.7.3",
-    "tape": "^4.8.0",
     "unified": "^6.1.6"
   },
   "dependencies": {
