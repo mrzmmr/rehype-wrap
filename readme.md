@@ -4,6 +4,7 @@
 
 [![Travis](https://img.shields.io/travis/mrzmmr/rehype-wrap.svg)](https://travis-ci.org/mrzmmr/rehype-wrap)
 [![Coverage Status](https://coveralls.io/repos/github/mrzmmr/rehype-wrap/badge.svg?branch=master)](https://coveralls.io/github/mrzmmr/rehype-wrap?branch=master)
+[![David](https://img.shields.io/david/mrzmmr/rehype-wrap.svg)](https://david-dm.org/mrzmmr/rehype-wrap)
 
 ## Install
 
