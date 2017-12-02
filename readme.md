@@ -3,7 +3,7 @@
 > Wrap selected elements with a given element
 
 [![Travis](https://img.shields.io/travis/mrzmmr/rehype-wrap.svg)](https://travis-ci.org/mrzmmr/rehype-wrap)
-[![Codecov](https://img.shields.io/codecov/c/github/mrzmmr/rehype-wrap.svg)](https://codecov.io/gh/mrzmmr/rehype-wrap)
+[![Coverage Status](https://coveralls.io/repos/github/mrzmmr/rehype-wrap/badge.svg?branch=master)](https://coveralls.io/github/mrzmmr/rehype-wrap?branch=master)
 
 ## Install
 
