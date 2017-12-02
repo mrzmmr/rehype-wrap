@@ -1,6 +1,6 @@
 'use strict'
 
-const test = require('tape')
+const test = require('tap').test
 const rehype = require('rehype')
 const unified = require('unified')
 const remarkParse = require('remark-parse')
