@@ -1,13 +1,13 @@
 {
   "name": "rehype-wrap",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "wrap selected elements with a given element",
   "main": "index.js",
   "scripts": {
     "prepublish": "npm run build",
     "clean": "rimraf ./*.js coverage .nyc_output",
     "pretest": "npm run build",
-    "lint": "xo --fix",
+    "lint": "xo --fix src/*.js",
     "tap": "tap -Rspec test.js",
     "build": "npm run lint && npm run babel",
     "babel": "babel src -d .",
