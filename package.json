@@ -1,12 +1,15 @@
 {
   "name": "rehype-wrap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wrap selected elements with a given element",
   "main": "index.js",
   "scripts": {
+    "prepublish": "npm run build",
     "clean": "rimraf ./*.js coverage .nyc_output",
-    "pretest": "npm run babel",
+    "pretest": "npm run build",
+    "lint": "xo --fix",
     "tap": "tap -Rspec test.js",
+    "build": "npm run lint && npm run babel",
     "babel": "babel src -d .",
     "test": "nyc npm run tap && nyc report --reporter=text-lcov | coveralls"
   },
@@ -21,6 +24,20 @@
         }
       ]
     ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "xo": {
+    "extends": [
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    }
   },
   "repository": {
     "type": "git",
@@ -43,11 +60,15 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "coveralls": "^3.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.3.1",
     "nyc": "^11.3.0",
+    "prettier": "^1.8.2",
     "rehype": "^5.0.0",
     "rehype-stringify": "^3.0.0",
     "remark-parse": "^4.0.0",
     "remark-rehype": "^2.0.1",
+    "rimraf": "^2.6.2",
     "tap": "^10.7.3",
     "unified": "^6.1.6"
   },
