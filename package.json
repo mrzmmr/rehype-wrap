@@ -1,6 +1,6 @@
 {
   "name": "rehype-wrap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "wrap selected elements with a given element",
   "main": "index.js",
   "scripts": {
@@ -70,7 +70,8 @@
     "remark-rehype": "^2.0.1",
     "rimraf": "^2.6.2",
     "tap": "^10.7.3",
-    "unified": "^6.1.6"
+    "unified": "^6.1.6",
+    "xo": "^0.18.2"
   },
   "dependencies": {
     "hast-util-parse-selector": "^2.1.0",
