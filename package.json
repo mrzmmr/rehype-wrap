@@ -4,7 +4,7 @@
   "description": "wrap selected elements with a given element",
   "main": "index.js",
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run test",
     "clean": "rimraf ./*.js coverage .nyc_output",
     "pretest": "npm run build",
     "lint": "xo --fix src/*.js",
