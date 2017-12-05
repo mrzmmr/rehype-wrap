@@ -1,6 +1,6 @@
 {
   "name": "rehype-wrap",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "wrap selected elements with a given element",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,9 @@
     "lint": "xo --fix src/*.js",
     "tap": "tap -Rspec test.js",
     "build": "npm run lint && npm run babel",
+    "report": "nyc report --reporter=text-lcov | coveralls",
     "babel": "babel src -d .",
-    "test": "nyc npm run tap && nyc report --reporter=text-lcov | coveralls"
+    "test": "nyc npm run tap"
   },
   "babel": {
     "presets": [
