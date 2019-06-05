@@ -3,6 +3,9 @@
   "version": "1.0.5",
   "description": "wrap selected elements with a given element",
   "main": "index.js",
+  "engines": {
+    "node": ">=8.0"
+  },
   "scripts": {
     "clean": "rimraf ./*.js coverage .nyc_output",
     "lint": "prettier --write \"src/*.js\" && xo --fix",
