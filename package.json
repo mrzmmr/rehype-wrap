@@ -7,23 +7,9 @@
     "node": ">=8.0"
   },
   "scripts": {
-    "clean": "rimraf ./*.js coverage .nyc_output",
-    "lint": "prettier --write \"src/*.js\" && xo --fix",
-    "build": "babel src -d .",
-    "test": "npm run lint && npm run build && nyc tap -Rspec test.js",
+    "lint": "prettier --write \"./*.js\" && xo --fix",
+    "test": "npm run lint && nyc tap -Rspec test.js",
     "posttest": "nyc report --reporter=text-lcov | coveralls"
-  },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    ]
   },
   "prettier": {
     "singleQuote": true,
@@ -52,9 +38,6 @@
   },
   "homepage": "https://github.com/mrzmmr/rehype-wrap#readme",
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "babel-preset-env": "^1.7.0",
     "coveralls": "^3.0.3",
     "eslint-config-prettier": "^2.10.0",
     "eslint-plugin-prettier": "^2.7.0",
