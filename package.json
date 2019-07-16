@@ -7,22 +7,9 @@
     "node": ">=8.0"
   },
   "scripts": {
-    "lint": "prettier --write \"./*.js\" && xo --fix",
-    "test": "npm run lint && nyc tap -Rspec test.js",
+    "lint": "xo --fix",
+    "test": "tap --100 -Rspec test.js",
     "posttest": "nyc report --reporter=text-lcov | coveralls"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "tabWidth": 2,
-    "useTabs": false,
-    "parser": "babylon"
-  },
-  "xo": {
-    "prettier": true,
-    "ignores": [
-      "./*.js",
-      "src/test.js"
-    ]
   },
   "keywords": [
     "rehype",
@@ -39,15 +26,10 @@
   "homepage": "https://github.com/mrzmmr/rehype-wrap#readme",
   "devDependencies": {
     "coveralls": "^3.0.3",
-    "eslint-config-prettier": "^2.10.0",
-    "eslint-plugin-prettier": "^2.7.0",
-    "nyc": "^14.1.1",
-    "prettier": "^1.17.1",
     "rehype": "^5.0.1",
     "rehype-stringify": "^3.0.0",
     "remark-parse": "^4.0.0",
     "remark-rehype": "^2.0.1",
-    "rimraf": "^2.6.3",
     "tap": "^14.2.1",
     "unified": "^6.2.0",
     "xo": "^0.23.0"
