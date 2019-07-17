@@ -25,12 +25,12 @@
   },
   "homepage": "https://github.com/mrzmmr/rehype-wrap#readme",
   "devDependencies": {
-    "coveralls": "^3.0.3",
+    "coveralls": "^3.0.5",
     "rehype": "^5.0.1",
     "rehype-stringify": "^3.0.0",
     "remark-parse": "^4.0.0",
     "remark-rehype": "^2.0.1",
-    "tap": "^14.2.1",
+    "tap": "^14.4.2",
     "unified": "^6.2.0",
     "xo": "^0.23.0"
   },
