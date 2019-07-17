@@ -38,5 +38,8 @@
     "hast-util-parse-selector": "^2.1.0",
     "hast-util-select": "^1.0.1",
     "unist-util-visit": "^1.2.0"
+  },
+  "xo": {
+    "space": true
   }
 }

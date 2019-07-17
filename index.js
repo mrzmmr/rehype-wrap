@@ -1,13 +1,13 @@
 'use strict';
 
-/**
+/*
  * Dependencies
  */
 const visit = require('unist-util-visit');
 const select = require('hast-util-select');
 const parseSelector = require('hast-util-parse-selector');
 
-/**
+/*
  * Attacher
  */
 module.exports = options => {
@@ -15,7 +15,7 @@ module.exports = options => {
   const selector = options.selector || options.select || 'body';
   const wrapper = options.wrapper || options.wrap;
 
-  /**
+  /*
    * Transformer
    */
   return tree => {

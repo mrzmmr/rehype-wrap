@@ -1,12 +1,12 @@
 'use strict';
 
-const test = require('tap').test;
+const {test} = require('tap');
 const rehype = require('rehype');
 const unified = require('unified');
 const remarkParse = require('remark-parse');
 const remarkRehype = require('remark-rehype');
 const rehypeStringify = require('rehype-stringify');
-const wrap = require('./');
+const wrap = require('.');
 
 const markdown = `
 # Foo
@@ -39,7 +39,7 @@ test('rehype-wrap', t => {
 
     it.throws(
       () => {
-        vfile = process(wrap, { wrap: 'a', select: 1 }, markdown);
+        vfile = process(wrap, {wrap: 'a', select: 1}, markdown);
       },
       /Expected a `string` as selector/,
       ' if selector is not a string'
@@ -49,16 +49,16 @@ test('rehype-wrap', t => {
 
   t.test('should not throw', it => {
     it.doesNotThrow(() => {
-      vfile = process(wrap, { wrap: 'div' }, markdown);
+      vfile = process(wrap, {wrap: 'div'}, markdown);
 
       it.ok(vfile.toString().length > 0, 'should process');
       it.ok(
         vfile.toString() ===
-          [
-            '<div><h1>Foo</h1>',
-            '<pre><code class="language-js">const foo = \'bar\'',
-            '</code></pre></div>'
-          ].join('\n'),
+        [
+          '<div><h1>Foo</h1>',
+          '<pre><code class="language-js">const foo = \'bar\'',
+          '</code></pre></div>'
+        ].join('\n'),
         'should be equal wrap div'
       );
 
@@ -70,17 +70,17 @@ test('rehype-wrap', t => {
         .toString();
 
       const vfileWithBody = rehype()
-        .use(wrap, { wrap: 'div' })
+        .use(wrap, {wrap: 'div'})
         .processSync(vfile)
         .toString();
 
       it.ok(
         vfileWithBody ===
-          [
-            '<html><head></head><body><div><h1>Foo</h1>',
-            '<pre><code class="language-js">const foo = \'bar\'',
-            '</code></pre></div></body></html>'
-          ].join('\n'),
+        [
+          '<html><head></head><body><div><h1>Foo</h1>',
+          '<pre><code class="language-js">const foo = \'bar\'',
+          '</code></pre></div></body></html>'
+        ].join('\n'),
         'should be equal wrap div with body'
       );
 
@@ -95,18 +95,18 @@ test('rehype-wrap', t => {
 
       it.ok(
         vfile.toString() ===
-          [
-            '<h1>Foo</h1>',
-            '<div><pre><code class="language-js">const foo = \'bar\'',
-            '</code></pre></div>'
-          ].join('\n'),
+        [
+          '<h1>Foo</h1>',
+          '<div><pre><code class="language-js">const foo = \'bar\'',
+          '</code></pre></div>'
+        ].join('\n'),
         'should match with wrap dive and selector pre'
       );
 
       const ast = unified()
         .use(remarkParse)
         .use(remarkRehype)
-        .use(wrap, { wrap: 'div' })
+        .use(wrap, {wrap: 'div'})
         .parse('<h1>foo</h1>');
 
       t.ok(vfile, ast.type);
