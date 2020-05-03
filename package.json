@@ -29,7 +29,7 @@
     "rehype-stringify": "^6.0.0",
     "remark-parse": "^7.0.1",
     "remark-rehype": "^5.0.0",
-    "tap": "^14.6.2",
+    "tap": "^14.10.7",
     "unified": "^8.3.2"
   },
   "dependencies": {
