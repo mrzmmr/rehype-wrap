@@ -7,7 +7,6 @@
     "node": ">=8.0"
   },
   "scripts": {
-    "lint": "xo --fix",
     "test": "tap --100 -Rspec test.js",
     "posttest": "nyc report --reporter=text-lcov | coveralls"
   },
@@ -31,16 +30,12 @@
     "remark-parse": "^7.0.1",
     "remark-rehype": "^5.0.0",
     "tap": "^14.6.2",
-    "unified": "^8.3.2",
-    "xo": "^0.24.0"
+    "unified": "^8.3.2"
   },
   "dependencies": {
     "hast-util-parse-selector": "^2.1.0",
     "hast-util-select": "^3.0.1",
     "unist-util-visit": "^2.0.0"
-  },
-  "xo": {
-    "space": true
   },
   "repository": {
     "type": "git",
