@@ -11,9 +11,10 @@ const parseSelector = require('hast-util-parse-selector');
  * Attacher
  */
 module.exports = options => {
-  options = options || {};
+  options = options || { fallback: true };
   const selector = options.selector || options.select || 'body';
   const wrapper = options.wrapper || options.wrap;
+  const fallback = options.fallback;
 
   /*
    * Transformer
@@ -40,7 +41,7 @@ module.exports = options => {
           parent.children[i] = wrap;
         }
       });
-    } else {
+    } else if (fallback) {
       wrap.children = tree.children;
       tree.children = [wrap];
     }
