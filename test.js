@@ -44,6 +44,14 @@ test('rehype-wrap', t => {
       /Expected a `string` as selector/,
       ' if selector is not a string'
     );
+
+    it.throws(
+      () => {
+        vfile = process(wrap, {wrap: 'a', select: 'p', fallback: 1}, markdown);
+      },
+      /Expected a `boolean` as fallback/,
+      ' if fallback is not a boolean'
+    );
     it.end();
   });
 
@@ -100,7 +108,27 @@ test('rehype-wrap', t => {
           '<div><pre><code class="language-js">const foo = \'bar\'',
           '</code></pre></div>'
         ].join('\n'),
-        'should match with wrap dive and selector pre'
+        'should match with wrap div and selector pre'
+      );
+
+      vfile = process(
+        wrap,
+        {
+          select: 'p',
+          wrap: 'div',
+          fallback: false
+        },
+        markdown
+      );
+
+      it.ok(
+        vfile.toString() ===
+        [
+          '<h1>Foo</h1>',
+          '<pre><code class="language-js">const foo = \'bar\'',
+          '</code></pre>'
+        ].join('\n'),
+        'should not wrap div as fallback if it does not match the selector p'
       );
 
       const ast = unified()
