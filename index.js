@@ -11,10 +11,10 @@ const parseSelector = require('hast-util-parse-selector');
  * Attacher
  */
 module.exports = options => {
-  options = options || { fallback: true };
+  options = options || {};
   const selector = options.selector || options.select || 'body';
   const wrapper = options.wrapper || options.wrap;
-  const fallback = options.fallback;
+  const fallback = options.fallback !== undefined ? options.fallback : true;
 
   /*
    * Transformer
@@ -26,6 +26,10 @@ module.exports = options => {
 
     if (typeof selector !== 'string') {
       throw new TypeError('Expected a `string` as selector');
+    }
+
+    if (typeof fallback !== 'boolean') {
+      throw new TypeError('Expected a `boolean` as fallback');
     }
 
     const selected = select.select(selector, tree);
