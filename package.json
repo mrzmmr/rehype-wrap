@@ -1,6 +1,6 @@
 {
   "name": "rehype-wrap",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "wrap selected elements with a given element",
   "main": "index.js",
   "engines": {
