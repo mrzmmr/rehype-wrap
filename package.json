@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "hast-util-parse-selector": "^2.2.4",
-    "hast-util-select": "^4.0.0",
+    "hast-util-select": "^4.0.2",
     "unist-util-visit": "^2.0.3"
   },
   "repository": {
